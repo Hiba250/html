@@ -1,0 +1,93 @@
+<html>
+<body>
+<center>
+<table border="0" cellpadding="6" cellspacing="6" align="center">
+<tr>
+<td>
+First name <input type="text" id="fname" name="fname" placeholder="Enter your name">
+</td>
+</tr>
+<tr>
+<td>
+Phone number <input type="text" id="pnumber" name="pnumber" placeholder="Enter your phone number">
+</td>
+</tr>
+<tr>
+<td>
+User name</td>
+<td>
+<input type="text" placeholder="Enter username" id="ui">
+</td>
+</tr>
+<tr>
+<td>
+Email
+</td>
+<td>
+<input type="email" placeholder="Enter your email" id="ei">
+</td>
+</tr>
+<tr>
+<td>
+Password
+</td>
+<td>
+<input type="password" placeholder="Enter your password" id="pi">
+</td>
+</tr>
+<tr>
+<td>
+Confirm password
+</td>
+<td>
+<input type="password" placeholder="Confirm your password" id="co">
+</td>
+</tr> 
+<tr>
+<td>
+<input type="submit" value="Create Account" onclick="create_account()">
+</td>
+</tr>
+</table>
+<script type="text/javascript">
+function create_account(){
+ var fname = document.getElementById("fname").value;
+ var pnumber = document.getElementById("pnumber").value;
+ var username = document.getElementById("ui").value;
+ var email = document.getElementById("ei").value;
+ var password = document.getElementById("pi").value;
+ var confirmPassword = document.getElementById("co").value;
+ 
+ var nameRegex = /^[A-Za-z]+$/; // Fixed regex for name validation
+ var emailRegex = /^[a-zA-Z0-9.-_]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/; // Fixed regex for email validation
+ 
+ // Check for empty fields
+ if (fname == "" || pnumber == "" || username == "" || email == "" || password == "" || confirmPassword == "") {
+     alert("Please fill out all fields.");
+     return;
+ }
+
+ // Name validation
+ if (!nameRegex.test(fname)) {
+     alert("Name is incorrect. It must contain alphabets only.");
+     return;
+ }
+
+ // Email validation
+ if (!emailRegex.test(email)) {
+     alert("Invalid email format.");
+     return;
+ }
+
+ // Password match check
+ if (password !== confirmPassword) {
+     alert("Passwords do not match.");
+     return;
+ }
+
+ alert("Your account has been created successfully.");
+}
+</script>
+</center>
+</body>
+</html>
