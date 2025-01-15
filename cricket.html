@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    text-align: center;
+    font-family: arial, sans-serif;
+    background-color: blue;
+}
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 80%;
+    background-color: grey;
+}
+th, td {
+    border: 2px solid #3b3a30;
+    padding: 10px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<h1 style="font-family: verdana;">Indian Cricket Players</h1>
+<table>
+<tr><th>Player's Name</th></tr>
+<?php
+$players = array("shubman gill", "preet kaur", "rohit sharma", "virat kohli", "singh", "yaadav", "shami", "bumrah");
+foreach ($players as $player) {
+    echo "<tr><td>$player</td></tr>";
+}
+?>
+</table>
+</body>
+</html>
